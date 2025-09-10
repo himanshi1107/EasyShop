@@ -4,7 +4,7 @@ metadata:
   name: mongodb
   namespace: easyshop
 spec:
-  serviceName: "mongodb-service"
+  serviceName: mongodb-service
   replicas: 1
   selector:
     matchLabels:
@@ -16,12 +16,11 @@ spec:
     spec:
       containers:
       - name: mongodb
-        image: mongo:6.0
+        image: mongo:latest
         ports:
         - containerPort: 27017
-          name: mongodb
         volumeMounts:
-        - name: mongodb-data
+        - name: mongodb-storage
           mountPath: /data/db
         resources:
           requests:
@@ -30,12 +29,7 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
-  volumeClaimTemplates:
-  - metadata:
-      name: mongodb-data
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "gp2"
-      resources:
-        requests:
-          storage: 5Gi
+      volumes:
+        - name: mongodb-storage
+          persistentVolumeClaim:
+            claimName: mongodb-pvc
