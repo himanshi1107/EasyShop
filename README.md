@@ -256,41 +256,7 @@ easyshop/
 └── scripts/            # Database migration scripts
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run tests: `npm test` (coming soon)
-5. Commit your changes: `git commit -m 'Add amazing feature'`
-6. Push to the branch: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-> [!TIP]
-> Check our [Contributing Guidelines](CONTRIBUTING.md) for more details
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Radix UI](https://www.radix-ui.com/)
-
 ## 📫 Contact
-
-For questions or feedback, please open an issue or contact the maintainers:
-
-- Maintainer - [@Md. Afzal hassan Ehsani](https://github.com/iemafzalhassan)
-- Project Link: [https://github.com/iemafzalhassan/easyshop](https://github.com/iemafzalhassan/easyshop)
-
----
 
 <div align="center">
   <p>
@@ -299,41 +265,6 @@ For questions or feedback, please open an issue or contact the maintainers:
 </div>
 
 
-# EasyShop Deployment
-
-## Architecture Overview
-
-EasyShop is deployed using a GitOps approach with the following components:
-
-1. **Jenkins Pipeline**: Handles CI/CD, infrastructure deployment, and ArgoCD setup
-2. **Terraform**: Manages AWS infrastructure (VPC, EKS, IAM)
-3. **ArgoCD**: Manages application deployment using GitOps
-4. **Kubernetes**: Runs the application and supporting services
-5. **Monitoring**: Prometheus and Grafana for observability
-
-## Deployment Flow
-
-1. Jenkins pipeline is triggered by code changes
-2. Docker images are built and pushed to Docker Hub
-3. Terraform deploys or updates AWS infrastructure
-4. ArgoCD is installed on the EKS cluster
-5. ArgoCD applications are created to deploy EasyShop and monitoring
-6. ArgoCD syncs the applications from the Git repository
-
-## Key Files
-
-- **Jenkinsfile**: Main CI/CD pipeline definition
-- **terraform/**: Infrastructure as Code for AWS resources
-- **kubernetes/**: Kubernetes manifests for application deployment
-- **kubernetes/argocd/**: ArgoCD application definitions
-- **scripts/**: Utility scripts for deployment and management
-
-## Important Notes
-
-- ArgoCD installation is managed exclusively by the Jenkins pipeline
-- Infrastructure is managed by Terraform
-- Application deployment is managed by ArgoCD
-- Secrets should be managed using AWS Secrets Manager or Kubernetes secrets
 
 ## Local Development
 
