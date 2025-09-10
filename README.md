@@ -260,7 +260,7 @@ easyshop/
 
 <div align="center">
   <p>
-    Made with ❤️ by <a href="https://iemafzalhassan.tech" target="_blank"><b>Md. Afzal Hassan Ehsani</b></a>
+    Made with ❤️ by <b>Himanshi Bobde</b>
   </p>
 </div>
 
